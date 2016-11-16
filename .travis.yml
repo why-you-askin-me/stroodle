@@ -2,7 +2,7 @@ language: node_js
 
 before_install:
   - eval "$(ssh-agent -s)" #start the ssh agent
-  - echo "$SSH_DEPLOY" > ./key
+  - echo "$SSH_DEPLOY" | tr '~' '\n' > ./key
   - chmod 600 ./key
   - ssh-add ./key
 
