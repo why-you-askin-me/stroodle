@@ -1,10 +1,7 @@
 {
   "name": "stroodle",
   "version": "0.0.1",
-  "description": "",
   "main": "src/server/main.js",
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "babel-core": "^6.18.0",
     "babel-loader": "^6.2.5",
@@ -26,6 +23,6 @@
     "build": "$(npm bin)/webpack --optimize-minimize",
     "server": "node src/server/index.js",
     "clean": "rm -rf build",
-    "deploy": "npm run clean; npm run build; $(npm bin)/gh-pages -d build"
+    "deploy": "./deploy.sh"
   }
 }
