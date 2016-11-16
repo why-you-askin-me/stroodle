@@ -4,6 +4,8 @@ install: npm install
 after_success:
   - eval "$(ssh-agent -s)" #start the ssh agent
   - echo "$SSH_DEPLOY" > ./key
+  - chmod 600 ./key
   - ssh-add ./key
+  - git config user.name "Travis Build"
   - git push --delete gh-pages
   - npm run deploy
