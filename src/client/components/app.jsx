@@ -1,7 +1,7 @@
 import React from 'react'
 
 const App = () => (
-    <p>Suh dude</p>
+    <p>Tom is amazing</p>
 )
 
 export default App
