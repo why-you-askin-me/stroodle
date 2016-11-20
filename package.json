@@ -25,7 +25,7 @@
   "scripts": {
     "watch": "$(npm bin)/webpack --watch",
     "build": "$(npm bin)/webpack --optimize-minimize",
-    "server": "node src/server/index.js",
+    "start": "node src/server/index.js",
     "clean": "rm -rf build",
     "deploy": "./deploy.sh"
   }
