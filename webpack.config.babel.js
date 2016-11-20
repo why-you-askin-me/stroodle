@@ -1,5 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
+import autoprefixer from 'autoprefixer'
 import webpack from 'webpack'
 import path from 'path'
 
@@ -29,11 +30,12 @@ module.exports = {
             },
             {
                 test: /\.styl/,
-                loaders: ['style', 'postcss', 'css', 'stylus']
+                loaders: ['style', 'css', 'postcss', 'stylus']
             }
         ]
     },
     resolve: {
         extensions: ['', '.js', '.jsx', '.styl']
     },
+    postcss: () => [autoprefixer]
 }
