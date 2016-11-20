@@ -3,6 +3,5 @@
 # Fail on any errors
 set -e
 
-npm run clean
-npm run build
+git push --delete gh-pages
 $(npm bin)/gh-pages -d build

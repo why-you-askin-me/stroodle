@@ -8,8 +8,9 @@ before_install:
 
 install: npm install
 
+script: npm run build
+
 after_success:
   - git config user.name "Travis Build"
   - git config user.email "<>"
-  - git push --delete gh-pages
   - npm run deploy
