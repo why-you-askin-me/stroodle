@@ -14,15 +14,13 @@ class Login extends React.Component {
         super()
 
         this.state = { text: "" }
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         this.setState({ text: e.target.value })
     }
 
-    handleSubmit(e) {
+    handleSubmit = (e) => {
         e.preventDefault()
         this.props.auth(this.state.text)
     }
