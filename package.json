@@ -27,6 +27,6 @@
     "build": "$(npm bin)/webpack --optimize-minimize",
     "start": "node src/server/index.js",
     "clean": "rm -rf build",
-    "deploy": "./deploy.sh"
+    "deploy": "npm run clean && npm run build && ./deploy.sh"
   }
 }
