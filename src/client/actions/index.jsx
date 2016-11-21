@@ -3,7 +3,7 @@ import { send } from '../socket'
 // Mirror an action in the API
 const mirror = f => (
     (...args) => {
-        const msg = f.call(null, args)
+        const msg = f.apply(null, args)
         send(msg)
         return msg
     }

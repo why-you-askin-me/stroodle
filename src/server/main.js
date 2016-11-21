@@ -2,14 +2,22 @@ import { Server } from 'ws'
 
 const server = new Server({ port: 1984 })
 
+const connected = {}
+
 server.on('connection', ws => {
-    console.log('connection!')
+    const id = `${ws.upgradeReq.connection.remoteAddress}:${ws._socket._peername.port}`
+
+    console.log(`${id} has connected.`)
+
     ws.on('message', msg => {
-        console.log('Got message: ' + msg)
+        console.log(`${id}: ${msg}`)
     })
 
-    ws.send(JSON.stringify({
-        type: 'LOG_JOIN',
-        user: 'user123',
-    }))
+    // Remove the user from connected when they leave
+    ws.on('close', (code, msg) => {
+        console.log(`${id} has quit.`)
+        delete connected[id]
+    })
+
+    connected[id] = ws
 })
