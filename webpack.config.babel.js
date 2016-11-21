@@ -16,6 +16,11 @@ const loaders = [
     {
         test: /\.jsx?$/,
         loader: 'babel',
+        exclude: /node_modules/,
+        query: {
+            presets: ['es2015', 'es2017', 'react'],
+            plugins: ['transform-runtime', 'transform-decorators-legacy', 'transform-class-properties'],
+        },
     },
     {
         test: /\.styl$/,
