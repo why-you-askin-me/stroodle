@@ -3,7 +3,6 @@ import block from 'bem-cn'
 import Step from './step'
 import Messages from './messages'
 import Login from './login'
-import Codeblock from './codeblock'
 
 const b = block('app')
 
@@ -33,11 +32,13 @@ const App = ({profile}) => (
         <div className={b('steps')}>
             <Step num={1}>
                 Creating a component.
-                <Codeblock>
-                    &lt;lol&gt;
-                    this isn't formatting correctly
-                    &lt;/lol&gt;
-                </Codeblock>
+                <pre className={b('code')}>
+                    {`\
+<lol>
+    this isn't formatting correctly
+</lol>\
+                    `}
+                </pre>
             </Step>
 
             <Step num={2}>
