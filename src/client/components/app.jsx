@@ -21,7 +21,6 @@ const App = ({profile}) => (
             </div>
         </div>
 
-        <p className={b('tom')}>Tom is amazing</p>
         <div className={b('demo')}>
             {
                 profile ? <Messages /> : <Login />
