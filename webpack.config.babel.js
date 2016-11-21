@@ -21,10 +21,6 @@ const loaders = [
         test: /\.jsx?$/,
         loader: 'babel',
         exclude: /node_modules/,
-        query: {
-            presets: ['es2015', 'es2017', 'react'],
-            plugins: ['transform-runtime', 'transform-decorators-legacy', 'transform-class-properties'],
-        },
     },
     {
         test: /\.styl$/,
@@ -35,6 +31,26 @@ const loaders = [
         loader: 'file',
     },
 ]
+
+const prodPlugins = [
+    new webpack.optimize.UglifyJsPlugin({
+        compress: { warnings: false }
+    }),
+]
+
+const plugins = [
+    new HtmlWebpackPlugin({
+        template: client + '/index.html',
+    }),
+    new CopyWebpackPlugin([
+        { to: buildClient, from: res },
+    ]),
+    new webpack.DefinePlugin({
+        NODE_ENV: process.env.NODE_ENV,
+    }),
+]
+// Merge with production plugins if needed
+.concat(process.env.NODE_ENV === 'production' ? prodPlugins : [])
 
 const resolve = {
     extensions: ['', '.js', '.jsx', '.styl'],
@@ -63,17 +79,10 @@ const clientConfig = {
         path: buildClient,
         filename: 'stroodle.[hash].js'
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: client + '/index.html',
-        }),
-        new CopyWebpackPlugin([
-            { to: buildClient, from: res },
-        ]),
-    ],
     postcss: [ autoprefixer({ browsers }) ],
     module: { loaders },
     resolve,
+    plugins,
 }
 
 module.exports = [serverConfig, clientConfig]
