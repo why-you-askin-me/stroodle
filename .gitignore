@@ -8,3 +8,5 @@ build
 [._]s[a-w][a-z]
 
 npm-debug.log
+
+local

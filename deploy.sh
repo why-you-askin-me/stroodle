@@ -6,4 +6,4 @@ git push --delete origin gh-pages
 # Fail on any errors
 set -e
 
-$(npm bin)/gh-pages -d build
+$(npm bin)/gh-pages -d build/client

@@ -1,9 +1,15 @@
 import React from 'react'
 import block from 'bem-cn'
+import Messages from './messages'
+import Login from './login'
 
 const b = block('app')
 
-const App = () => (
+const mapStateToProps = state => ({
+    profile: state.profile
+})
+
+const App = ({profile}) => (
     <div className={b}>
         <p className={b('tom')}>Tom is amazing</p>
 
@@ -32,6 +38,11 @@ const App = () => (
             <p className={b('step-body')}>
                 This is where you put the meat of how you do 'Step 2'
             </p>
+        </div>
+        <div className={b('demo')}>
+            {
+                profile ? <Messages /> : <Messages />
+            }
         </div>
     </div>
 )

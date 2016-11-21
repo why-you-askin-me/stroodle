@@ -4,38 +4,58 @@ import autoprefixer from 'autoprefixer'
 import webpack from 'webpack'
 import path from 'path'
 
-const build = path.resolve(__dirname, 'build')
-const src = path.resolve(__dirname, 'src/client/')
+const browsers = ['last 2 versions', 'ie >= 10']
 const res = path.resolve(__dirname, 'res')
 
-module.exports = {
-    entry: src + '/main.jsx',
+const server = path.resolve(__dirname, 'src/server/')
+const client = path.resolve(__dirname, 'src/client/')
+const buildClient = path.resolve(__dirname, 'build/client')
+const buildServer = path.resolve(__dirname, 'build/server')
+
+const loaders = [
+    {
+        test: /\.jsx?/,
+        loader: 'babel'
+    },
+    {
+        test: /\.styl/,
+        loaders: ['style', 'css', 'postcss', 'stylus'],
+    }
+]
+
+const extensions = ['', '.js', '.jsx', '.styl']
+
+const serverConfig = {
+    entry: server + '/main.js',
+    target: 'node',
     output: {
-        path: build,
+        path: buildServer,
+        filename: 'stroodle.js',
+    },
+    module: { loaders },
+    resolve: { extensions },
+}
+
+const clientConfig = {
+    entry: [
+        client + '/main.styl',
+        client + '/main.jsx'
+    ],
+    output: {
+        path: buildClient,
         filename: 'stroodle.[hash].js'
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/client/index.html',
+            template: client + '/index.html',
         }),
         new CopyWebpackPlugin([
-            { to: build, from: res }
+            { to: buildClient, from: res }
         ]),
     ],
-    module: {
-        loaders: [
-            {
-                test: /\.jsx?/,
-                loader: 'babel'
-            },
-            {
-                test: /\.styl/,
-                loaders: ['style', 'css', 'postcss', 'stylus']
-            }
-        ]
-    },
-    resolve: {
-        extensions: ['', '.js', '.jsx', '.styl']
-    },
-    postcss: () => [autoprefixer]
+    postcss: [ autoprefixer({ browsers }) ],
+    module: { loaders },
+    resolve: { extensions },
 }
+
+module.exports = [serverConfig, clientConfig]
