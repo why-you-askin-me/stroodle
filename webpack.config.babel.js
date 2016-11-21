@@ -14,16 +14,25 @@ const buildServer = path.resolve(__dirname, 'build/server')
 
 const loaders = [
     {
-        test: /\.jsx?/,
-        loader: 'babel'
+        test: /\.jsx?$/,
+        loader: 'babel',
     },
     {
-        test: /\.styl/,
+        test: /\.styl$/,
         loaders: ['style', 'css', 'postcss', 'stylus'],
-    }
+    },
+    {
+        test: /\.(jpg|jpeg|png|svg)$/,
+        loader: 'file',
+    },
 ]
 
-const extensions = ['', '.js', '.jsx', '.styl']
+const resolve = {
+    extensions: ['', '.js', '.jsx', '.styl'],
+    alias: {
+        res,
+    },
+}
 
 const serverConfig = {
     entry: server + '/main.js',
@@ -33,7 +42,7 @@ const serverConfig = {
         filename: 'stroodle.js',
     },
     module: { loaders },
-    resolve: { extensions },
+    resolve,
 }
 
 const clientConfig = {
@@ -50,12 +59,12 @@ const clientConfig = {
             template: client + '/index.html',
         }),
         new CopyWebpackPlugin([
-            { to: buildClient, from: res }
+            { to: buildClient, from: res },
         ]),
     ],
     postcss: [ autoprefixer({ browsers }) ],
     module: { loaders },
-    resolve: { extensions },
+    resolve,
 }
 
 module.exports = [serverConfig, clientConfig]
