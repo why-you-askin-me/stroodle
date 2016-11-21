@@ -3,6 +3,7 @@ import block from 'bem-cn'
 import Step from './step'
 import Messages from './messages'
 import Login from './login'
+import Codeblock from './codeblock'
 
 const b = block('app')
 
@@ -13,11 +14,13 @@ const mapStateToProps = state => ({
 const App = ({profile}) => (
     <div className={b}>
         <div className={b('header')}>
-            <div className={b('title')}>
-                Welcome to the club.
-            </div>
-            <div className={b('subtitle')}>
-                Making a simple component with React
+            <div className={b('overlay')}>
+                <div className={b('title')}>
+                    Welcome to the club.
+                </div>
+                <div className={b('subtitle')}>
+                    Making a simple component with React
+                </div>
             </div>
         </div>
 
@@ -30,6 +33,11 @@ const App = ({profile}) => (
         <div className={b('steps')}>
             <Step num={1}>
                 Creating a component.
+                <Codeblock>
+                    &lt;lol&gt;
+                    this isn't formatting correctly
+                    &lt;/lol&gt;
+                </Codeblock>
             </Step>
 
             <Step num={2}>
