@@ -28,8 +28,8 @@
     "ws": "^1.1.1"
   },
   "scripts": {
-    "watch": "$(npm bin)/webpack --watch",
-    "build": "$(npm bin)/webpack --optimize-minimize",
+    "watch": "$(npm bin)/webpack --watch --bail",
+    "build": "$(npm bin)/webpack --optimize-minimize --bail",
     "clean": "rm -rf build",
     "deploy": "npm run clean && npm run build && ./deploy.sh",
     "start": "node build/server/stroodle.js"
