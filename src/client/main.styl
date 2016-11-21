@@ -1,3 +1,6 @@
+dark-main = #141414
+light-main = #f7f7f7
+
 @import url('https://fonts.googleapis.com/css?family=Arimo|Playfair+Display|Work+Sans')
 @require './style/*.styl'
 
@@ -5,4 +8,14 @@
     margin 0
 
 html, body, #app, .app
+    background-color light-main
     min-height 100%
+
+::-webkit-scrollbar
+    width 1em
+
+::-webkit-scrollbar-thumb
+    background-color dark-main
+
+::-webkit-scrollbar-track
+    background-color light-main
