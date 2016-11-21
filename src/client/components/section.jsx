@@ -3,10 +3,13 @@ import block from 'bem-cn'
 
 const b = block('section')
 
-const Section = ({name, children}) => (
+const Section = ({title, subtitle, children}) => (
     <div className={b}>
         <div className={b('title')}>
-            {name}
+            {title}
+        </div>
+        <div className={b('subtitle')}>
+            {subtitle}
         </div>
         <div className={b('body')}>
             {children}
