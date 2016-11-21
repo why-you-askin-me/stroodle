@@ -1,12 +1,12 @@
 import React from 'react'
 import block from 'bem-cn'
 
-const b = block('step')
+const b = block('section')
 
-const Step = ({num, children}) => (
+const Section = ({name, children}) => (
     <div className={b}>
         <div className={b('title')}>
-            Step {num}
+            {name}
         </div>
         <div className={b('body')}>
             {children}
@@ -14,4 +14,4 @@ const Step = ({num, children}) => (
     </div>
 )
 
-export default Step
+export default Section

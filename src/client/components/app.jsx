@@ -1,6 +1,6 @@
 import React from 'react'
 import block from 'bem-cn'
-import Step from './step'
+import Section from './section'
 import Messages from './messages'
 import Login from './login'
 
@@ -30,7 +30,7 @@ const App = ({profile}) => (
         </div>
 
         <div className={b('steps')}>
-            <Step num={1}>
+            <Section name="Step 1">
                 Creating a component.
                 <pre className={b('code')}>
                     {`\
@@ -39,11 +39,11 @@ const App = ({profile}) => (
 </lol>\
                     `}
                 </pre>
-            </Step>
+            </Section>
 
-            <Step num={2}>
+            <Section name="Step 2">
                 This is where you put the meat of how you do 'Step 2'
-            </Step>
+            </Section>
         </div>
     </div>
 )
