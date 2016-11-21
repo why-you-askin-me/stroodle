@@ -3,6 +3,7 @@ import block from 'bem-cn'
 import Section from './section'
 import Messages from './messages'
 import Login from './login'
+import Buttoncomponent from './buttoncomponent'
 
 const b = block('app')
 
