@@ -28,7 +28,7 @@ const loaders = [
     },
     {
         test: /\.(jpg|jpeg|png|svg)$/,
-        loader: 'file',
+        loaders: ['file', 'image-webpack'],
     },
 ]
 
@@ -83,6 +83,21 @@ const clientConfig = {
     module: { loaders },
     resolve,
     plugins,
+    imageWebpackLoader: {
+        mozjpeg: {
+            quality: 65,
+        },
+        pngquant: {
+            quality: "65-90",
+            speed: 4,
+        },
+        svgo: {
+            plugins: [
+                { removeViewBox: false },
+                { removeEmptyAttrs: false },
+            ]
+        }
+    },
 }
 
 module.exports = [serverConfig, clientConfig]
