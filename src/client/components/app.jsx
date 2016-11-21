@@ -43,6 +43,7 @@ const App = ({profile}) => (
                 or infamy. To get you started working with React we have a repository with the necessary set-up files
                 to dive right into the coding.
             </Section>
+            <Buttoncomponent />
         </div>
 
         <div className={b('steps')}>
