@@ -11,6 +11,7 @@ const mirror = f => (
 
 export const AuthAction = {
     ENTER: 'AUTH_ENTER',
+    ERROR: 'AUTH_ERROR',
     SUCCESS: 'AUTH_SUCCESS',
 }
 
