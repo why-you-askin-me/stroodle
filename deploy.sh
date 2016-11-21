@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
+# Delete if branch exists
+git push --delete origin gh-pages
+
 # Fail on any errors
 set -e
 
-git fetch
-git push --delete gh-pages
 $(npm bin)/gh-pages -d build
