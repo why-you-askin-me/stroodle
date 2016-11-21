@@ -1,59 +1,39 @@
 .app
-    display flex
-    flex-direction column
-    justify-content center
-    width 100%
-    height auto
-    background-color #ffcc90
+    background-color #f7f7f7
 
     &__tom
         color red
 
     &__demo
-        height 300px
-        width 400px
+        height 20em
+        width 30em
+        margin auto
 
-    &__heading
+    &__header
+        user-select none
+        cursor default
+
+        background-color #141414
+        color white
+
+        width 100%
+        height 38em
+
         display flex
-        width inherit
+        flex-direction column
+        align-items center
+        justify-content center
 
     &__title
         font-family 'Playfair Display', serif
-        font-size 2em
+        font-size 3em
         padding 0.5em
-        color #141414
 
     &__subtitle
         font-family 'Arimo', sans-serif
-        font-size 0.5em
         padding 0.25em
-        color #141414
 
-    &__step
+    &__steps
         display flex
         flex-direction column
-        justify-content center
-        padding 0.25em
-        width 30em //unsure if this is a sufficient width
-        height auto
-
-    &__step-header
-        display flex
-        justify-content center
         align-items center
-
-        font-family 'Arimo', sans-serif
-        font-size 1.5em
-        font-weight bold
-        padding 0.5em
-        color #141414
-
-    &__step-body
-        display flex
-        justify-content center
-        align-items center
-
-        font-family 'Work Sans', snas-serif
-        font-size 1em
-        padding 0.5em
-        color #141414
