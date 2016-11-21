@@ -12,7 +12,6 @@ install: npm install
 script: npm run build
 
 after_success:
-  - git config user.name "Travis Build"
-  - git config user.email "<>"
+  - git config --global user.name "Travis Build"
   - git remote set-url origin git@github.com:why-you-askin-me/stroodle
   - ./deploy.sh
