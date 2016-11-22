@@ -23,7 +23,7 @@ const App = ({loggedIn}) => (
                     WELCOME TO THE CLUB
                 </div>
                 <div className={b('subtitle')}>
-                    MAKING A SIMPLE COMPONENT IN WITH REACT
+                    MAKING A SIMPLE COMPONENT WITH REACT
                 </div>
             </div>
         </div>
