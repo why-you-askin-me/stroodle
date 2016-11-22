@@ -1,3 +1,5 @@
+import { AuthAction, TextAction } from '../actions'
+
 export const LogAction = {
     JOIN: 'LOG_JOIN',
     CHAT: 'LOG_CHAT',
@@ -7,16 +9,22 @@ export const LogAction = {
 
 const log = (state = [], action) => {
     switch(action.type) {
+        case AuthAction.SUCCESS:
+            return [
+                ...state,
+                `Logged in as ${action.user}`
+            ]
+
         case LogAction.JOIN:
             return [
                 ...state,
                 `${action.user} has joined.`
             ]
 
-        case LogAction.CHAT:
+        case TextAction.CHAT:
             return [
                 ...state,
-                `${action.user}: ${action.message}`
+                `${action.user}: ${action.text}`
             ]
 
         case LogAction.LEAVE:

@@ -10,12 +10,27 @@ const mirror = f => (
 )
 
 export const AuthAction = {
-    ENTER: 'AUTH_ENTER',
+    SUBMIT: 'AUTH_SUBMIT',
     ERROR: 'AUTH_ERROR',
     SUCCESS: 'AUTH_SUCCESS',
 }
 
 export const auth = mirror(user => ({
-    type: AuthAction.ENTER,
+    type: AuthAction.SUBMIT,
     user
+}))
+
+export const TextAction = {
+    UPDATE: 'TEXT_UPDATE',
+    SUBMIT: 'TEXT_SUBMIT',
+    CHAT: 'TEXT_CHAT',
+}
+
+export const textUpdate = mirror(text => ({
+    type: TextAction.UPDATE,
+    text
+}))
+
+export const textSubmit = mirror(() => ({
+    type: TextAction.SUBMIT,
 }))

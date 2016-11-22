@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import log from './log'
+import messages from './messages'
 import { AuthAction } from '../actions'
 
 const profile = (state = null, action) => {
@@ -13,6 +14,7 @@ const profile = (state = null, action) => {
 const reducers = combineReducers({
     log,
     profile,
+    messages,
 })
 
 export default reducers

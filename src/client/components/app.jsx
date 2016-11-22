@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import block from 'bem-cn'
 import Section from './section'
 import Messages from './messages'
@@ -10,10 +11,10 @@ import ReactMarkdown from 'react-markdown'
 const b = block('app')
 
 const mapStateToProps = state => ({
-    profile: state.profile
+    loggedIn: !!state.profile
 })
 
-const App = ({profile}) => (
+const App = ({loggedIn}) => (
     <div className={b}>
         <Anchor />
         <div className={b('header')}>
@@ -38,7 +39,7 @@ const App = ({profile}) => (
 
         <div className={b('demo')}>
             {
-                profile ? <Messages /> : <Login />
+                loggedIn ? <Messages /> : <Login />
             }
         </div>
 
@@ -93,7 +94,7 @@ class Buttoncomponent extends React.Component{
         super()
 
         this.state = {
-            likes:0, 
+            likes:0,
             dislikes:0
         }
     }
@@ -118,7 +119,7 @@ class Buttoncomponent extends React.Component{
         super()
 
         this.state = {
-            likes:0, 
+            likes:0,
             dislikes:0
         }
 
@@ -129,7 +130,7 @@ class Buttoncomponent extends React.Component{
     }
 
     onDislike = () => {
-        this.setState({dislikes: this.state.dislikes + 1})                    
+        this.setState({dislikes: this.state.dislikes + 1})
     }
 }\
                         `}
@@ -153,7 +154,7 @@ class Buttoncomponent extends React.Component{
         super()
 
         this.state = {
-            likes:0, 
+            likes:0,
             dislikes:0
         }
 
@@ -164,7 +165,7 @@ class Buttoncomponent extends React.Component{
     }
 
     onDislike = () => {
-        this.setState({dislikes: this.state.dislikes + 1})                    
+        this.setState({dislikes: this.state.dislikes + 1})
     }
 
     render() {
@@ -174,7 +175,7 @@ class Buttoncomponent extends React.Component{
 
             Dislikes: {this.state.dislikes}
             <button onClick={this.onDislike}>Dislike</button>
-        </div>                   
+        </div>
     }
 }
 
@@ -318,4 +319,4 @@ The main types of websites that React is used for is websites that require dynam
     </div>
 )
 
-export default App
+export default connect(mapStateToProps)(App)

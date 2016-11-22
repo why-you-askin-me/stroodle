@@ -4,18 +4,15 @@ let socket
 let dispatch
 
 const connect = () => {
-    const interval = setInterval(() => {
-        socket = new WebSocket('ws://localhost:1984')
-        socket.onopen = () => clearInterval(interval)
-        socket.onmessage = msg => dispatch(JSON.parse(msg.data))
-        socket.onerror = () => {
-            socket = null
-            dispatch({
-                type: LoginAction.ERROR,
-                error: 'Failed to connect',
-            })
-        }
-    }, 1000)
+    socket = new WebSocket('ws://localhost:1984')
+    socket.onmessage = msg => dispatch(JSON.parse(msg.data))
+    socket.onerror = () => {
+        socket = null
+        dispatch({
+            type: LoginAction.ERROR,
+            error: 'Failed to connect',
+        })
+    }
 }
 
 export const init = store => {
