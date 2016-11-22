@@ -62,7 +62,7 @@ const App = ({loggedIn}) => (
 
             <div id="Step2"></div>
             <Section title="Step 2" subtitle="Creating an index">
-                Make sure you're working within the main directory '/starter-kit' and create a file called 'index.html'
+                Make sure you're working within the main directory 'starter-kit/' and create a file called 'index.html'
                 For the sake of this build our loader will be using the index.html file. This should be a pretty standard
                 setup looking like this:
                 <pre className={b('code')}>
@@ -83,7 +83,7 @@ const App = ({loggedIn}) => (
 
             <div id="Step3"></div>
             <Section title="Step 3" subtitle="Creating a component">
-                Make sure you're working within the starter-kit/src/client/component/ folder. Name the file 'buttoncomponent.jsx', and
+                Make sure you're working within the starter-kit/src/ folder. Name the file 'buttoncomponent.jsx', and
                 we can get the groundwork of what you need started. The start of your file should look like this:
                 <pre className={b('code')}>
                     {`\
@@ -189,7 +189,7 @@ export default Buttoncomponent\
             <div id="Step6"></div>
             <Section title="Step 6" subtitle="Creating a main component">
                 The power of React is not only in writing Html declaratively alongside Javascript, but it is also being
-                able to nest and re-use components. Change back to the main directory 'starter-kit/src/client'
+                able to nest and re-use components.
                 Create a file called 'main.jsx' and in here we'll be importing the component we just made.
                 <pre className={b('code')}>
                     {`\
@@ -201,7 +201,7 @@ import Buttoncomponent from './buttoncomponent'
 render(
     <Buttoncomponent />,
     document.getElementById('main')
-)
+)\
                         `}
                 </pre>
                 The 'main.jsx' component acts as a collection for all of the sub components ie: 'buttoncomponent.jsx'
@@ -210,7 +210,7 @@ render(
 
             <div id="Step7"></div>
             <Section title="Step 7" subtitle="Inserting the components into the Html">
-                Now we will be revisiting the file 'index.html' in 'starter-kit/' and adding in the
+                Now we will be revisiting the file 'index.html' in 'starter-kit/src/' and adding in the
                 main component that is holding all of our sub-components. (In this case we only have one, but this is
                 the power of React). We insert this as follows:
                 <pre className={b('code')}>
@@ -237,10 +237,11 @@ render(
                 So now you're done! The components are all in the corresponding slots. Now head to your terminal and enter:
                 <pre className={b('code')}>
                     {`\
+npm install
 npm run watch\
                         `}
                 </pre>
-                This will build the site under 'starter-kit/build/client/' as the file 'index.html'. Open that file in your browser of
+                This will download the necessary node modules, and build the site under 'starter-kit/build/client/' as the file 'index.html'. Open that file in your browser of
                 choice (we recommend Google Chrome) and you're off to the races! Like or Dislike to your hearts content.
             </Section>
 
