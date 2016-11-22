@@ -277,7 +277,7 @@ Webpack is also a new and popular build system. One of the main reasons why its 
 
 React is best suited for developers who plan on working on large scale projects. An example of a large website that uses React would be Facebook, as they are the ones who created and developed the framework.  Developers who plan on working on small websites would most likely not use React due to the steep learning curve and intensive set-up needed to just start up a build. These disadvantages make it so that it is not worth it for the small assistance that using React would provide for them.
 
-The main types of websites that React is used for is websites that require dynamic componenets and interactive components in them like chat rooms. Some websites that have these requirements that would benifit from React are Facebook, Youtube, and Spotify to name a few. 
+The main types of websites that React is used for is websites that require dynamic components and interactive components in them like chat rooms. Some websites that have these requirements that would benefit from React are Facebook, Youtube, and Spotify just to name a few. 
 
                         `} />
                 </div>
