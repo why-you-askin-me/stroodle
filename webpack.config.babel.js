@@ -30,6 +30,10 @@ const loaders = [
         test: /\.(jpg|jpeg|png|svg)$/,
         loaders: ['file', 'image-webpack'],
     },
+    {
+        test: /\.json$/,
+        loader: 'json',
+    },
 ]
 
 const prodPlugins = [
