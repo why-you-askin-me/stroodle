@@ -46,7 +46,7 @@ const App = ({loggedIn}) => (
         <div className={b('steps')}>
             <div id="EndGoal"></div>
             <Section id="Endgoal" title="End Goal" subtitle="What you'll achieve">
-                At the end of this example you'll have a working like and dislike button to show off your fame ... 
+                At the end of this example you'll have a working like and dislike button to show off your fame ...
                 or infamy. To get you started working with React we have a repository with the necessary set-up files
                 to dive right into the coding.
             </Section>
@@ -251,44 +251,49 @@ npm run watch\
                     <ReactMarkdown source={`
 ## What is React?
 
-React is a declarative, efficient, and flexible JavaScript Library for building user interfaces. 
-Webpack is a build system that lets you compile your specified files automatically when you type in a command. 
+React is a declarative, efficient, and flexible JavaScript Library for building
+user interfaces. Webpack is a build system that lets you compile your specified
+files automatically when you type in a command.
 
 ## Popularity:
 
-React is one of the newest and most popular web applications for front-end application development. 
-React's rise in popularity came shortly after Angular 2 was announced. The main problem with Angular 2 was 
-that it was not going to be built with backwards compatibility which affected a lot of developers to 
-the point of abandoning their projects. However React offered a lot of performance benefits which convinced 
-developers to give it a chance.
+React is one of the newest and most popular web applications for front-end
+application development. React's rise in popularity came shortly after Angular 2
+was announced. The main problem with Angular 2 was that it was not going to be
+built with backwards compatibility which affected a lot of developers to the
+point of abandoning their projects. However React offered a lot of performance
+benefits which convinced developers to give it a chance.
 
 ## Usage with Webpack:
 
-Webpack is a relatively new and popular build system. One of the main reasons why it is popular, 
-is because it allows users to split their code more efficiently. Most languages clump code into one 
-file making it difficult for people to work simultaneously. However, Webppack allows developers to 
-work on a project simultaneously. Once the development is finished, webpack is used to compile 
-everything into one big file. This is favourable to many developers that plan on doing large scale 
-projects. An example of this would be Facebook which uses React and Webpack.
+Webpack is a relatively new and popular build system. One of the main reasons
+why it is popular, is because it allows users to split their code more
+efficiently. Most languages clump code into one file making it difficult for
+people to work simultaneously. However, Webppack allows developers to work on a
+project simultaneously. Once the development is finished, webpack is used to
+compile everything into one big file. This is favourable to many developers
+that plan on doing large scale projects. An example of this would be Facebook
+which uses React and Webpack.
 
 ### React & Webpack Strengths:
 
 - Simpler Code with Fewer Bugs
 - React is fast
 - High compatability with existing code or other frameworks
-	
+
 ### React & Webpack Weaknesses:
 
 - Steep learning curve
-- Lots of effort to setup 
+- Lots of effort to setup
 
 ## Who does React help?
 
-React is best suited for developers who plan on working on large scale projects. Developers working 
-on small websites would most likely not use React due to a steep learning curve and setup. 
-Small projects benefit less from React.
+React is best suited for developers who plan on working on large scale projects.
+Developers working on small websites would most likely not use React due to a
+steep learning curve and setup. Small projects benefit less from React.
 
-Websites that use React require dynamic and interactive components. Some popular websites that use React are:
+Websites that use React require dynamic and interactive components. Some popular
+websites that use React are:
 - [Facebook](https://www.facebook.com/)
 - [Discord](https://discordapp.com/)
 - [Spotify](https://www.spotify.com/ca-en/)
@@ -297,7 +302,7 @@ Websites that use React require dynamic and interactive components. Some popular
                         `} />
                 </div>
             </Section>
-            
+
             <div id="Credits"></div>
             <Section title="Credits" subtitle="Work division">
                 <div className={b('markdown')}>
@@ -323,12 +328,12 @@ Websites that use React require dynamic and interactive components. Some popular
 
 - Conclusion and credits
 - Button example for tutorial
-- Prologue 
+- Prologue
 
 ## Alex Zhou:
 
 - Conclusion and credits
-- Button example for tutorial 
+- Button example for tutorial
 - References
 
 
