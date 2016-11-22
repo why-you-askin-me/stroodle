@@ -77,7 +77,7 @@ const serverConfig = {
 const clientConfig = {
     entry: [
         client + '/main.styl',
-        client + '/main.jsx'
+        client + '/main.jsx',
     ],
     output: {
         path: buildClient,

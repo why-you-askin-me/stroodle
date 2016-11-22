@@ -1,5 +1,9 @@
 import { send } from '../socket'
 
+import { LogAction } from '../reducers/log'
+
+export { LogAction }
+
 // Mirror an action in the API
 const mirror = f => (
     (...args) => {
