@@ -14,6 +14,7 @@ const Anchor = () => (
         <a className={b('link')} href="#Step5">Step 5</a>
         <a className={b('link')} href="#Step6">Step 6</a>
         <a className={b('link')} href="#Step7">Step 7</a>
+        <a className={b('link')} href="#Step8">Step 8</a>
         <a className={b('link')} href="#Conclusion">Conclusion</a>
         <a className={b('link')} href="#Credits">Credits</a>
     </div>

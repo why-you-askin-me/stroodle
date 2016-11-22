@@ -232,6 +232,18 @@ render(
             must match the ElementId provided in 'main.jsx'.
             </Section>
 
+            <div id="Step8"></div>
+            <Section title="Step 8" subtitle="Running the component">
+                So now you're done! The components are all in the corresponding slots. Now head to your terminal and enter:
+                <pre className={b('code')}>
+                    {`\
+npm run watch\
+                        `}
+                </pre>
+                This will build the site under 'starter-kit/build/client/' as the file 'index.html'. Open that file in your browser of
+                choice (we recommend Google Chrome) and you're off to the races! Like or Dislike to your hearts content.
+            </Section>
+
             <div id="Conclusion"></div>
             <Section title="Conclusion" subtitle="Reporting on React">
                 <div className={b('markdown')}>
