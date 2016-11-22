@@ -1,4 +1,4 @@
-import { TextAction } from '../actions'
+import { LogAction, TextAction } from '../actions'
 
 const messages = (state = {}, action) => {
     let newState = Object.assign({}, state)
@@ -16,6 +16,7 @@ const messages = (state = {}, action) => {
             return newState
 
         case TextAction.CHAT:
+        case LogAction.LEAVE:
             delete newState[action.user]
 
             return newState
