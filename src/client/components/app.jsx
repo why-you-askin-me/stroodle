@@ -20,10 +20,10 @@ const App = ({loggedIn}) => (
         <div className={b('header')}>
             <div className={b('overlay')}>
                 <div className={b('title')}>
-                    Welcome to the club.
+                    WELCOME TO THE CLUB
                 </div>
                 <div className={b('subtitle')}>
-                    Making a simple component with React
+                    MAKING A SIMPLE COMPONENT IN WITH REACT
                 </div>
             </div>
         </div>
