@@ -1,55 +1,116 @@
 .messages
+    green-msg = #5db65d
+
+    ::-webkit-scrollbar
+        width 0.4em
+
+    ::-webkit-scrollbar-thumb
+        background-color #bbb
+        border-radius 25px
+
     display flex
     flex-direction column
 
     height 100%
-    width 100%
+    border 1px solid #dadada
+    border-radius 1em
+    padding 0.5em
+
+    &__info
+        text-align center
+        margin 0.5em
+
+    &__info, &__author
+        color #8e8e8e
+        font-size 0.6em
+        font-family 'Arimo', sans-serif
+
+    &__author
+        padding-left 1.5em
+        padding-bottom 0.2em
+        &--me
+            display none
+
+    &__group
+        margin 0.5em
 
     &__message
         padding 0.5em 1.0em
-        margin 0.5em
-        border-radius 2em
-        background-color #494
-        color light-main
+        border-radius 25px
         max-width 10em
         font-family 'Arimo', sans-serif
-
         position relative
+        word-wrap break-word
 
-        &:before 
-            content "" 
-            position absolute 
-            z-index 1 
-            bottom -2px 
-            right -7px 
-            height 20px 
-            border-right 20px solid #494
-            border-bottom-left-radius  16px 14px 
-            -webkit-transform translate(0, -2px) 
-         
+        @keyframes message
+            0%
+                opacity 0
+                transform scale(0.8) translate3d(10px, 0, 0)
+            100%
+                opacity 1
+                transform scale(1) translate3d(0,0,0)
+        animation message 0.5s
+
+        &:before
+            content ""
+            position absolute
+            z-index 2
+            bottom -2px
+            height 20px
+            transform translate(0, -2px)
+
         &:after
-            content "" 
-            position absolute 
-            z-index 1 
-            bottom -2px 
-            right -56px 
-            width 26px 
-            height 20px 
-            background light-main 
-            border-bottom-left-radius  10px 
-            -webkit-transform translate(-30px, -2px) 
-         
+            content ""
+            position absolute
+            z-index 3
+            transform translate(-30px, -2px)
+            bottom -2px
+            width 26px
+            height 20px
+
+        &--other
+            white-msg = #e0e0e0
+            background-color white-msg
+            color #5a5a5a
+
+            &:before
+                border-left 20px solid white-msg
+                border-bottom-right-radius  16px 14px
+                left -7px
+
+            &:after
+                left 4px
+                background light-main
+                border-bottom-right-radius 10px
+
+        &--visor
+            visor-msg = #ea9930
+            background-color visor-msg
+            color white
+
+            &:before
+                border-left-color visor-msg
+
+        &--me
+            background-color green-msg
+            color light-main
+            margin-left auto
+
+            &:before
+                right -7px
+                border-right 20px solid green-msg
+                border-bottom-left-radius  16px 14px
+
+            &:after
+                right -56px
+                background light-main
+                border-bottom-left-radius  10px
+
 
     &__scrollable
-        overflow auto
         flex-grow 1
-
-    &__history
-        width 100%
-
-    &__future
-        background-color red
-        width 100%
+        overflow-x hidden
+        overflow-y scroll
 
     &__input
         padding 0.5em 1em

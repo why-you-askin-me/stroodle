@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import block from 'bem-cn'
 import { textUpdate, textSubmit } from '../actions'
+import { LogType } from '../reducers/log'
 
 const b = block('messages')
 
@@ -24,21 +25,29 @@ const resetInput = e => {
 const Messages = ({log, messages, profile, onChange, onSubmit}) => (
     <form className={b} onSubmit={onSubmit}>
         <div className={b('scrollable')}>
-            <div className={b('history')}>
-                {
-                    log.map((msg, id) => (
-                        <div key={id} className={b('message')}>{msg}</div>
-                    ))
-                }
-            </div>
-            <div className={b('future')}>
-                {
-                    Object.keys(messages).map((key, id) => {
-                        if(key == profile) return null
-                        return <div key={id} className={b('visor')}>{`${key}: ${messages[key]}`}</div>
-                    })
-                }
-            </div>
+            {[
+                log.map((msg, id) => {
+                    switch(msg.type) {
+                        case LogType.INFO:
+                            return <div key={`log${id}`} className={b('info')}>{msg.text}</div>
+                        case LogType.HISTORY:
+                            const me = msg.user == profile
+                            return <div key={id} className={b('group')}>
+                                <div className={b('author', {me})}>{msg.user}</div>
+                                <div className={b('message', {me, other: !me})}>{msg.text}</div>
+                            </div>
+                    }
+                }),
+                Object.keys(messages).map((key, id) => {
+                    if(key == profile) return null
+                    return <div key={`future${id}`} className={b('group')}>
+                        <div className={b('author')}>{key}</div>
+                        <div className={b('message', {other: true, visor: true})}>
+                            {messages[key]}
+                        </div>
+                    </div>
+                })
+            ]}
         </div>
         <input
             className={b('input')}

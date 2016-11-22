@@ -51,6 +51,7 @@ const plugins = [
     ]),
     new webpack.DefinePlugin({
         NODE_ENV: process.env.NODE_ENV,
+        SERVER_PORT: process.env.SERVER_PORT | 1969,
     }),
 ]
 // Merge with production plugins if needed
@@ -77,7 +78,7 @@ const serverConfig = {
 const clientConfig = {
     entry: [
         client + '/main.styl',
-        client + '/main.jsx'
+        client + '/main.jsx',
     ],
     output: {
         path: buildClient,

@@ -1,7 +1,7 @@
 import { Server } from 'ws'
-import { AuthAction, TextAction } from '../client/actions'
+import { AuthAction, TextAction, LogAction } from '../client/actions'
 
-const server = new Server({ port: 1984 })
+const server = new Server({ port: process.env.SERVER_PORT })
 
 const connections = {}
 const users = {}
@@ -11,6 +11,9 @@ server.on('connection', ws => {
     const id = `${ws.upgradeReq.connection.remoteAddress}:${ws._socket._peername.port}`
 
     console.log(`${id} has connected.`)
+
+    connections[id] = ws
+    messages[id] = ''
 
     ws.on('message', msg => {
         console.log(msg)
@@ -24,12 +27,14 @@ server.on('connection', ws => {
         delete messages[id]
 
         if(users[id]) {
+            broadcast({
+                type: LogAction.LEAVE,
+                user: users[id],
+            })
+
             delete users[id]
         }
     })
-
-    connections[id] = ws
-    messages[id] = ''
 })
 
 const send = (id, obj) => {
@@ -38,8 +43,12 @@ const send = (id, obj) => {
     }
 }
 
-const broadcast = msg => {
+const broadcast = (msg, exclude) => {
     for(let id in connections) {
+        if(id === exclude) {
+            continue
+        }
+
         connections[id].send(JSON.stringify(msg))
     }
 }
@@ -49,11 +58,12 @@ const handle = (id, msg) => {
     switch(msg.type) {
         case AuthAction.SUBMIT:
             for(let user in users) {
-                if(users[user] == msg.user) {
-                    connections[id].send({
+                if(users[user] === msg.user) {
+                    send(id, {
                         type: AuthAction.ERROR,
                     })
-                    break;
+
+                    return
                 }
             }
 
@@ -63,7 +73,12 @@ const handle = (id, msg) => {
                 user: msg.user,
             })
 
-            break;
+            broadcast({
+                type: LogAction.JOIN,
+                user: msg.user,
+            }, id)
+
+            break
 
         case TextAction.UPDATE:
             if(user) {
@@ -76,10 +91,11 @@ const handle = (id, msg) => {
                 })
             }
 
-            break;
+            break
 
         case TextAction.SUBMIT:
             const message = messages[id]
+            if(message.length == 0) break
 
             if(user) {
                 broadcast({
@@ -91,6 +107,6 @@ const handle = (id, msg) => {
 
             messages[id] = ''
 
-            break;
+            break
     }
 }
