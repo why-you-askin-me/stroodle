@@ -51,17 +51,19 @@ const defines = [
     }),
 ]
 
-const plugins = [
+const clientPlugins = [
     new HtmlWebpackPlugin({
         template: client + '/index.html',
     }),
     new CopyWebpackPlugin([
         { to: buildClient, from: res },
     ]),
-    ...defines
 ]
+
 // Merge with production plugins if needed
-.concat(process.env.NODE_ENV === 'production' ? prodPlugins : [])
+const plugins = defines.concat(
+    process.env.NODE_ENV === 'production' ? prodPlugins : []
+)
 
 const resolve = {
     extensions: ['', '.js', '.jsx', '.styl'],
@@ -78,7 +80,7 @@ const serverConfig = {
         filename: 'stroodle.js',
     },
     module: { loaders },
-    plugins: defines,
+    plugins: plugins,
     resolve,
 }
 
@@ -94,7 +96,7 @@ const clientConfig = {
     postcss: [ autoprefixer({ browsers }) ],
     module: { loaders },
     resolve,
-    plugins,
+    plugins: plugins.concat(clientPlugins),
     imageWebpackLoader: {
         mozjpeg: {
             quality: 65,
