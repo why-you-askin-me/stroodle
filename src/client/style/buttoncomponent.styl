@@ -1,7 +1,4 @@
 .buttoncomponent
-    width 100%
-    height auto
-
     display flex
     font-family 'Work Sans', sans-serif
     flex-direction column
@@ -9,9 +6,18 @@
     justify-content center
     font-size 1em
     margin 1em
+    padding 0.5em
     border-radius 0.25em
     color dark-main
     background-color #ffe2af
+
+    &__holder
+        display flex
+        flex-direction column
+        justify-content center
+        align-items center
+        padding 0.5em
+        margin 0.5em
     
     &__button
         display flex
@@ -24,3 +30,4 @@
         color dark-main
         background-color #e5c285
         outline none
+        border none

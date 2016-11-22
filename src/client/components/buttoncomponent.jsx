@@ -24,11 +24,14 @@ class Buttoncomponent extends React.Component{
 
     render() {
         return <div className={b}>
-            Likes: {this.state.likes}
-            <button className={b('button')} onClick={this.onLike}>Like</button>
-
-            Dislikes: {this.state.dislikes}
-            <button className={b('button')} onClick={this.onDislike}>Dislike</button>
+            <div className={b('holder')}>
+                Likes: {this.state.likes}
+                <button className={b('button')} onClick={this.onLike}>Like</button>
+            </div>
+            <div className={b('holder')}>
+                Dislikes: {this.state.dislikes}
+                <button className={b('button')} onClick={this.onDislike}>Dislike</button>
+            </div>
         </div>                   
     }
 }
