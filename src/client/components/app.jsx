@@ -57,7 +57,7 @@ const App = ({loggedIn}) => (
             <div id="Step1"></div>
             <Section title="Step 1" subtitle="Cloning the starter-kit">
                 <a href="https://github.com/why-you-askin-me/starter-kit">Go here</a> and clone the starter-kit repository to your computer wherever you prefer. This will get you setup
-                with the basic Webpack and Babel configurations to start working with React.
+                with the basic Webpack and Babel configurations to start working with React. This tutorial is meant to work with command lines in Unix based systems, or with Unix shell emulators.
             </Section>
 
             <div id="Step2"></div>
