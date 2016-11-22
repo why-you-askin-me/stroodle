@@ -254,11 +254,11 @@ React is a declarative, efficient, and flexible JavaScript Library for building 
 
 ## Popularity:
 
-React is one of the newest and most popular web applications for front-end application development. React's rise in popularity came shortly after Angular 2 was announced. Its main problem was that Angular 2 was not going to be build with backwards compatibility which affected a lot of developers in trouble to the point of abandoning their projects. However with the performance benefits that React offered, it made a lot of users try it.
+React is one of the newest and most popular web applications for front-end application development. React's rise in popularity came shortly after Angular 2 was announced. The main problem with Angular 2 was that it was not going to be built with backwards compatibility which affected a lot of developers to the point of abandoning their projects. However React offered a lot of performance benefits which convinced developers to give it a chance.
 
 ## Usage with Webpack:
 
-Webpack is also a recent and popular build system. One of the main reasons why its popular is because it allowed the users to split their code much more efficiently. As most codes run it all together at once, Webpack will allow users split up their code during development. Once the development is finished, they can use webpack to compile everything into one file. This means that they can run the codes when necessary. This was highly favourable to many programmers especially users or companies that do large scale projects. One of the companies that uses this is Facebook. Facebook uses both React & Webpack.
+Webpack is also a new and popular build system. One of the main reasons why its popular is because it allowed the users to split their code much more efficiently. For most languages, the code is all clumped into one file making it difficult for people to work on it simultaneously. However, Webpack allows users to split their code into multiple files allowing developers to work on the project simultaneously. Once the development is finished, they can use webpack to compile everything into one big file. This is highly favourable to many companies and developers that plan on doing large scale projects. One of the companies that use both React and Webpack is Facebook.
 
 ### Some React & Webpack Strengths:
 
@@ -274,7 +274,7 @@ Webpack is also a recent and popular build system. One of the main reasons why i
 
 ## Developers who would use it?
 
-The main developers who use React are developers working on large website. For example Facebook uses React, they also are in fact the developers of React as well. Developers who are developing a small website would most likely not use React beacuse of the steep learning curve and intensive setup are not worth it for the small assistence that using React would provide for a small website.
+React is best suited for developers who plan on working on large scale projects. An example of a large website that uses React would be Facebook, as they are the ones who created and developed the framework.  Developers who plan on working on small websites would most likely not use React due to the steep learning curve and intensive set-up needed to just start up a build. These disadvantages make it so that it is not worth it for the small assistance that using React would provide for them.
 
 The main types of websites that React is used for is websites that require dynamic componenets and interactive components in them like chat rooms. Some websites that have these requirements that would benifit from React are Facebook, Youtube, and Spotify to name a few. 
 
