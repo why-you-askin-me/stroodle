@@ -4,7 +4,7 @@ let socket
 let dispatch
 
 const connect = () => {
-    socket = new WebSocket('ws://localhost:1984')
+    socket = new WebSocket(`ws://sharecu.be:${process.env.SERVER_PORT}`)
     socket.onmessage = msg => dispatch(JSON.parse(msg.data))
     socket.onerror = () => {
         socket = null

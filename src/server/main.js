@@ -1,7 +1,7 @@
 import { Server } from 'ws'
 import { AuthAction, TextAction, LogAction } from '../client/actions'
 
-const server = new Server({ port: 1984 })
+const server = new Server({ port: process.env.SERVER_PORT })
 
 const connections = {}
 const users = {}
