@@ -62,7 +62,7 @@ const App = ({loggedIn}) => (
 
             <div id="Step2"></div>
             <Section title="Step 2" subtitle="Creating an index">
-                Make sure you're working within 'starter-kit/src' and create a file called 'index.html'
+                Make sure you're working within 'starter-kit/src/' and create a file called 'index.html'
                 For the sake of this build our loader will be using the index.html file. This should be a pretty standard
                 setup looking like this:
                 <pre className={b('code')}>
