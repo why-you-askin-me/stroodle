@@ -45,7 +45,7 @@ const prodPlugins = [
 const defines = [
     new webpack.DefinePlugin({
         'process.env': {
-            NODE_ENV: process.env.NODE_ENV,
+            NODE_ENV: JSON.stringify(process.env.NODE_ENV),
             SERVER_PORT: process.env.SERVER_PORT || 1969,
         },
     }),
