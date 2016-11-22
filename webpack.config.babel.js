@@ -42,6 +42,15 @@ const prodPlugins = [
     }),
 ]
 
+const defines = [
+    new webpack.DefinePlugin({
+        'process.env': {
+            NODE_ENV: process.env.NODE_ENV,
+            SERVER_PORT: process.env.SERVER_PORT || 1969,
+        },
+    }),
+]
+
 const plugins = [
     new HtmlWebpackPlugin({
         template: client + '/index.html',
@@ -49,10 +58,7 @@ const plugins = [
     new CopyWebpackPlugin([
         { to: buildClient, from: res },
     ]),
-    new webpack.DefinePlugin({
-        NODE_ENV: process.env.NODE_ENV,
-        SERVER_PORT: process.env.SERVER_PORT | 1969,
-    }),
+    ...defines
 ]
 // Merge with production plugins if needed
 .concat(process.env.NODE_ENV === 'production' ? prodPlugins : [])
@@ -72,6 +78,7 @@ const serverConfig = {
         filename: 'stroodle.js',
     },
     module: { loaders },
+    plugins: defines,
     resolve,
 }
 
