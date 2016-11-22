@@ -62,7 +62,7 @@ const App = ({loggedIn}) => (
 
             <div id="Step2"></div>
             <Section title="Step 2" subtitle="Creating an index">
-                Make sure you're working within the main directory 'starter-kit/' and create a file called 'index.html'
+                Make sure you're working within 'starter-kit/src' and create a file called 'index.html'
                 For the sake of this build our loader will be using the index.html file. This should be a pretty standard
                 setup looking like this:
                 <pre className={b('code')}>
@@ -83,7 +83,7 @@ const App = ({loggedIn}) => (
 
             <div id="Step3"></div>
             <Section title="Step 3" subtitle="Creating a component">
-                Make sure you're working within the starter-kit/src/ folder. Name the file 'buttoncomponent.jsx', and
+                Again, working within the starter-kit/src/ folder. Name a new file 'buttoncomponent.jsx', and
                 we can get the groundwork of what you need started. The start of your file should look like this:
                 <pre className={b('code')}>
                     {`\
