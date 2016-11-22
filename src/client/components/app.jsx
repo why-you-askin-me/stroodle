@@ -266,7 +266,7 @@ developers to give it a chance.
 
 Webpack is a relatively new and popular build system. One of the main reasons why it is popular, 
 is because it allows users to split their code more efficiently. Most languages clump code into one 
-file making it difficult for people to work on simultaneously. However, Webppack allows developers to 
+file making it difficult for people to work simultaneously. However, Webppack allows developers to 
 work on a project simultaneously. Once the development is finished, webpack is used to compile 
 everything into one big file. This is favourable to many developers that plan on doing large scale 
 projects. An example of this would be Facebook which uses React and Webpack.
